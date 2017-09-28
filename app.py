@@ -82,7 +82,7 @@ def makeWebhookResult(data):
     "slot 3: " + data.get('slot_3') + \
     "slot 4: " + data.get('slot_4') + \
     "slot 5: " + data.get('slot_5') + \
-    "slot 6: " + data.get('slot_6') + \
+    "slot 6: " + data.get('slot_6') 
 
     #print("Response:")
     #print(speech)
