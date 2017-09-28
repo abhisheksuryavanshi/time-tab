@@ -42,9 +42,11 @@ def webhook():
 
     res = processRequest(req)
 
-    res.headers['Content-Type'] = 'application/json'
-    return res
-
+    res = json.dumps(res, indent=4)
+    print(res)
+    r = make_response(res)
+    r.headers['Content-Type'] = 'application/json'
+    return r
 
 def processRequest(req):
     if req.get("result").get("action") != "my-timetable":
@@ -73,20 +75,20 @@ def makeYqlQuery(req):
 def makeWebhookResult(data):
 
     speech = "Today is "+ data.get(day_name)+"day"+\
-    "Today's Schedule: " + \
-    "slot 1: " + data.get('slot_1') + \
-    "slot 2: " + data.get('slot_2') + \
-    "slot 3: " + data.get('slot_3') + \
-    "slot 4: " + data.get('slot_4') + \
-    "slot 5: " + data.get('slot_5') + \
-    "slot 6: " + data.get('slot_6') 
+    		"Today's Schedule: " + \
+    		"slot 1: " + data.get('slot_1') + \
+    		"slot 2: " + data.get('slot_2') + \
+    		"slot 3: " + data.get('slot_3') + \
+    		"slot 4: " + data.get('slot_4') + \
+    		"slot 5: " + data.get('slot_5') + \
+   			"slot 6: " + data.get('slot_6')
 
     print("Response:")
     print(speech)
 
     return {
-        "speech": speech,
-        "displayText": speech,
+        "speech": 5624,
+        "displayText": 1234,
         # "data": data,
         # "contextOut": [],
         "source": "my-timetable"
