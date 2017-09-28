@@ -63,7 +63,7 @@ def processRequest(req):
 def makeYqlQuery(req):
     result = req.get("result")
     parameters = result.get("parameters")
-    number = parameters.get("number")
+    number = parameters.get("number-integer")
     if number is None:
         return None
 
