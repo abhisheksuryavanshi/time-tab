@@ -74,7 +74,7 @@ def makeYqlQuery(req):
 
 def makeWebhookResult(data):
 
-    speech = "Today is "+ data.get(day_name)+"day"+\
+    speech = "Today is "+ data.get('day_name')+"day"+\
     		"Today's Schedule: " + \
     		"slot 1: " + data.get('slot_1') + \
     		"slot 2: " + data.get('slot_2') + \
