@@ -87,8 +87,8 @@ def makeWebhookResult(data):
     print(speech)
 
     return {
-        "speech": 5624,
-        "displayText": 1234,
+        "speech": "5624",
+        "displayText": "1234",
         # "data": data,
         # "contextOut": [],
         "source": "my-timetable"
