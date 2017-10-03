@@ -45,32 +45,12 @@ def webhook():
         "source": "my-timetable"
     }
 
-    return res
-
-    print("Request:")
-    print(json.dumps(req, indent=4))
-    baseurl = "http://abhishek7.pythonanywhere.com/days/"
-    result = req.get("result")
-    parameters = result.get("parameters")
-    number = parameters.get("numb")
-
-    yql_url = baseurl + number
-    result = urlopen(yql_url).read()
-    data = json.loads(result)
-
-    res = {
-        "speech":"5241",
-        "displayText":"6895",
-        # "data": data,
-        # "contextOut": [],
-        "source": "my-timetable"
-    }
-
     res = json.dumps(res, indent=4)
     print(res)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
     return r
+    
 
 
 if __name__ == '__main__':
