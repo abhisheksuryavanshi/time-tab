@@ -45,10 +45,10 @@ def webhook():
     parameters = result.get("parameters")
     number = parameters.get("number-integer")
 
-    url = baseurl + number
+    url = baseurl + "1"
     result = urlopen(url).read()
     data = json.loads(result)
-    
+
     res = {
         "speech":5241,
         "displayText":6895,
