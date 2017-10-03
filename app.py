@@ -45,10 +45,6 @@ def webhook():
     parameters = result.get("parameters")
     number = parameters.get("number-integer")
 
-    yql_url = baseurl + number
-    result = urlopen(yql_url).read()
-    data = json.loads(result)
-
     res = {
         "speech":5241,
         "displayText":6895,
