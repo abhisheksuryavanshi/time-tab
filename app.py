@@ -37,6 +37,15 @@ app = Flask(__name__)
 def webhook():
     req = request.get_json(silent=True, force=True)
 
+    baseurl = "http://abhishek7.pythonanywhere.com/days/"
+    result = req.get("result")
+    parameters = result.get("parameters")
+    number = parameters.get("number-integer")
+
+    yql_url = baseurl + number
+    result = urlopen(yql_url).read()
+    data = json.loads(result)
+
     res = {
         "speech":5241,
         "displayText":6895,
@@ -51,7 +60,6 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
     
-
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
