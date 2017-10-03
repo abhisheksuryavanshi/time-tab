@@ -43,9 +43,9 @@ def webhook():
     baseurl = "http://abhishek7.pythonanywhere.com/days/"
     result = req.get("result")
     parameters = result.get("parameters")
-    number = parameters.get("number-integer")
+    number = str(parameters.get("number-integer"))
 
-    url = baseurl + "1"
+    url = baseurl + number
     result = urlopen(url).read()
     data = json.loads(result)
 
