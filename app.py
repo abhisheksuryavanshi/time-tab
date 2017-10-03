@@ -49,8 +49,8 @@ def webhook():
     data = json.loads(result)
 
     res = {
-        "speech": data.get('slot_1'),
-        "displayText": data.get('slot_1'),
+        "speech":"5241",
+        "displayText":"6895",
         # "data": data,
         # "contextOut": [],
         "source": "my-timetable"
