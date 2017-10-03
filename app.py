@@ -37,6 +37,16 @@ app = Flask(__name__)
 def webhook():
     req = request.get_json(silent=True, force=True)
 
+    res = {
+        "speech":"5241",
+        "displayText":"6895",
+        # "data": data,
+        # "contextOut": [],
+        "source": "my-timetable"
+    }
+
+    return res
+
     print("Request:")
     print(json.dumps(req, indent=4))
     baseurl = "http://abhishek7.pythonanywhere.com/days/"
